@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.stevenw.mysqldao2.AMapper">
+    <select id="listAll" resultType="map">
+        SELECT  * FROM temp LIMIT 0,3;
+    </select>
+</mapper>
