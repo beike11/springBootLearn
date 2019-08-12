@@ -1,7 +1,12 @@
 package com.stevenw.compute;
 
+import com.stevenw.AQS.AqsDemo;
+
+import javax.xml.bind.Element;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.Date;
+import java.util.concurrent.*;
 
 /**
  * @author stevenw
@@ -95,5 +100,11 @@ public class ComputeUtils {
         double reslut = bigDecimal.doubleValue();
         return reslut;
     }
+
+
+        public static void main(String[] args) {
+
+        }
+
 
 }
