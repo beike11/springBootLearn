@@ -43,4 +43,18 @@ public class ThreadPoolUtils {
             e.printStackTrace();
         }
     }
+
+    public static ThreadPoolExecutor getThreadPoolExecutor(int size){
+        ThreadFactory threadFactory = new ThreadFactory() {
+            @Override
+            public Thread newThread(Runnable r) {
+                Thread thread = new Thread(r);
+                thread.setName("demo-pool-" +  System.currentTimeMillis());
+                return thread;
+            }
+        };
+        ArrayBlockingQueue<Runnable> blockingQueue = new ArrayBlockingQueue<Runnable>(size);
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(size,size*2,0, TimeUnit.SECONDS,blockingQueue,threadFactory,new ThreadPoolExecutor.AbortPolicy());
+        return threadPoolExecutor;
+    }
 }

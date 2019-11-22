@@ -21,13 +21,13 @@ public class StreamDemo {
            stream = list1.stream();
        }
     public static void main(String[] args) {
-//        testFilter();
+       testFilter();
 
-        Date date1 = new Date();
-        System.err.println(date1.toString());
-        Date date = new Date();
-        System.err.println(date.getTime());
-        System.err.println(date.after(date1));
+//        Date date1 = new Date();
+//        System.err.println(date1.toString());
+//        Date date = new Date();
+//        System.err.println(date.getTime());
+//        System.err.println(date.after(date1));
 //        testDistinct();
     }
 
@@ -35,7 +35,7 @@ public class StreamDemo {
      * 根据条件过滤元素
      */
     public static void testFilter(){
-        list1 =  stream.filter(o -> !o.equals("2")).collect(toList());
+        list1 =  stream.filter(o ->  {return  !o.equals("2");}).collect(toList());
         list1.stream().forEach(System.out::println);
 
     }
