@@ -5,6 +5,7 @@ import com.stevenw.thread.ThreadPoolUtils;
 import org.apache.tomcat.util.threads.TaskThreadFactory;
 
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Timer;
 import java.util.concurrent.*;
 
@@ -14,7 +15,6 @@ import java.util.concurrent.*;
  */
 public class AqsDemo {
     public static void semaphoreDemo() {
-
         Date strat = new Date();
         final int total = 500;
         final Semaphore semaphore = new Semaphore(20);

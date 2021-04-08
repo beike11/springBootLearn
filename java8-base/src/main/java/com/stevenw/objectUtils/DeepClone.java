@@ -12,7 +12,7 @@ public class DeepClone {
 
         try {
             //输出缓冲区
-            ByteArrayOutputStream outBuffer = new ByteArrayOutputStream();
+            ByteArrayOutputStream outBuffer = new ByteArrayOutputStream(1024);
             //输出流
             ObjectOutputStream oops = new ObjectOutputStream(outBuffer);
             oops.writeObject(t);

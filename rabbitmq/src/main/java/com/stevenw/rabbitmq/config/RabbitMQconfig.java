@@ -19,5 +19,5 @@ public class RabbitMQconfig {
     public Queue queue(){
         return new Queue(QUEUE,true);
     }
-
+    
 }

@@ -1,5 +1,8 @@
 package com.stevenw.stream;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -11,7 +14,7 @@ import static java.util.stream.Collectors.*;
  * @date 2019/9/26
  */
 public class StreamDemo {
-   private static List<String> list1 = new ArrayList<>();
+    private static List<String> list1 = new ArrayList<>();
    private static Stream<String> stream;
        static {
            list1.add("1");
@@ -20,22 +23,18 @@ public class StreamDemo {
            list1.add("2");
            stream = list1.stream();
        }
-    public static void main(String[] args) {
-       testFilter();
 
-//        Date date1 = new Date();
-//        System.err.println(date1.toString());
-//        Date date = new Date();
-//        System.err.println(date.getTime());
-//        System.err.println(date.after(date1));
-//        testDistinct();
+    public static void main(String[] args) {
+        System.out.println(list1.toString());
+        list1.add("a");
+        System.out.println(list1.toString());
     }
 
     /**
      * 根据条件过滤元素
      */
     public static void testFilter(){
-        list1 =  stream.filter(o ->  {return  !o.equals("2");}).collect(toList());
+         stream.filter(o ->  {return  !o.equals("2");}).collect(toList());
         list1.stream().forEach(System.out::println);
 
     }

@@ -21,6 +21,7 @@ public class SendController {
     @RequestMapping("/mq/sendMsg")
     @ResponseBody
     public void sendMsg(String msg){
+
         if(!Objects.isNull(msg)){
             rabbitTemplate.convertAndSend(RabbitMQconfig.QUEUE, msg);
             System.err.println(22222);
